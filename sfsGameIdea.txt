@@ -1,0 +1,38 @@
+sfs game idea: 6/13/18
+
+Don't let your food get contaminated by physical, chemical, biological hazards
+
+You are a head chef working on your world famous soup
+scene: A large bubbling pot of soup in a kitchen
+
+Apprentice cooks are bringing different ingredients to use in your soup
+Each cook carries a container marked with an ingredient
+Each cook approaches the pot of soup, halts for {variable} seconds then pours it in and walks away
+
+You must reject ingredients that would contaminate your soup
+Click the cook & ingredient to reject it, cook walks away
+
+Ingredients: vegetables, meats, spices, ... {variable point values}
+Contaminants: sanitizer, screws, floor cleaner, ...
+
+Each ingredient adds points to your score
+
+As the game progresses, cooks speed up and multiple cooks try to pour their ingredient into your soup
+
+Game ends when you reach 100 Ingredients?
+Cooks stop and clap for your successful accomplishment
+
+Game ends if the soup gets contaminated
+Soup color turns black, all cooks stop and look shocked
+
+game assets:
+5 different cooks with animations [walk, pour, clap, shocked expression]
+bubbling pot of soup, animation [looping bubbles, color change]
+kitchen background
+score board
+start, pause, resume, play again buttons
+instruction screen
+results screen
+intro story
+
+

@@ -1,0 +1,50 @@
+WEBVTT
+Kind: captions
+Language: en
+Style:
+::cue(c.colorCCCCCC) { color: rgb(204,204,204);
+ }
+::cue(c.colorE5E5E5) { color: rgb(229,0,229);
+ }
+##
+
+
+00:00:09.120 --> 00:00:10.650
+the airfield inspection is
+
+NOTE http://html5doctor.com/video-subtitling-and-webvtt/
+
+00:00:10.650 --> 00:00:16.610 T:1% A:start S:100% L:20%
+one of the largest parts of your
+periodic<00:00:12.480><c> inspection</c>
+
+
+00:00:16.610 --> 00:00:17.170
+during<00:00:16.970><c> this</c><00:00:17.060><c> inspection</c>
+
+
+00:00:17.570 --> 00:00:18.980
+during this inspection
+<c.colorE5E5E5>authorized</c><00:00:18.560><c> airport</c><00:00:18.980><c> personnel</c>
+
+
+00:00:19.220 --> 00:00:20.450
+<c.colorCCCCCC>authorized</c> airport personnel
+will<00:00:19.700><c> escort</c><00:00:20.090><c> you</c><00:00:20.360><c> through</c><00:00:20.450><c> the</c>
+
+
+00:00:20.690 --> 00:00:21.860
+will escort you through the
+movement<00:00:21.140><c> area</c><00:00:21.410><c> so</c><00:00:21.590><c> you</c><00:00:21.680><c> can</c><00:00:21.860><c> examine</c>
+
+
+00:00:22.220 --> 00:00:24.860
+movement area so you can examine
+<c.colorCCCCCC>its</c><00:00:22.640><c> features</c><00:00:23.030><c> in</c><00:00:23.150><c> detail</c>
+
+
+00:00:25.260 --> 00:00:27.300
+<c.colorCCCCCC>its</c> features in detail
+the<00:00:26.250><c> flow</c><00:00:26.490><c> of</c><00:00:26.640><c> the</c><00:00:26.760><c> inspection</c><00:00:27.300><c> will</c>
+
+

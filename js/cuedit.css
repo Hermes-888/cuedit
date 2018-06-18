@@ -1,0 +1,97 @@
+.container {
+   width: 100%;
+   font-family: sans-serif;
+   font-size: 14px;
+}
+.colmFull {
+   width: 100%;
+   float: left;
+}
+.colmLeft {
+   width: 50%;
+   float: left;
+}
+.colmRight {
+   width: 48%;
+   height: 520px;
+   margin-left: 10px;
+   overflow-y: auto;
+   float:left;
+   border: 1px solid grey;
+}
+video {
+   width: 100%;
+}
+.panel {
+   width: 98%;
+   height: auto;
+   margin: 3px;
+   padding: 2px;
+   border: 1px solid #000000;
+}
+.btnbox {
+   width: 99%;
+}
+button {
+   margin: 0px 5px;
+   font-size: 16px;
+}
+textarea {
+  width: 99%;
+  height: 48px;/* 3 lines*/
+}
+.selected {
+   background-color: lightblue !important;
+}
+#current {
+   width: 66%;
+   float: left;
+}
+.incbtns {
+   width: 10%;
+   height: auto;
+   float: right;
+   margin-right: 20px;
+}
+.btn {
+  border: 1px solid grey;
+   font-size: 13px;
+   font-weight: bolder;
+   text-align: center;
+   padding: 0px 6px;
+   cursor: pointer; 
+}
+.delbtn {
+   font-size: 13px;
+   margin-left: 5px;
+}
+.plusbtn {
+   float: right;
+}
+.minusbtn {
+   float: left;
+}
+.savebtn {
+   float: left;
+   font-size: 14px;
+   margin-top: -3px;
+}
+#loadinstruct {
+   width:40%;
+   padding-left: 20px;
+   text-align: left;
+   float:left;
+}
+#selectfiles {
+    padding: 10px;
+}
+.selctvid {
+    padding: 3px 5px;
+    margin: 2px 0px;
+    background-color: bisque;
+}
+.selcttrk{
+    padding: 3px 5px;
+    margin: 2px 0px;
+    background-color: burlywood;
+}

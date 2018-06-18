@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" href="justcontext.css">
+    <script src="justcontext.js"></script>
+    <script>
+    // justContext
+        function handleMenuAction(evt) {
+            alert("Action required: " + evt);
+        }
+    </script>
+  </head>
+  <body style="background-color:#cccccc; color:#ffffff; font-family:arial,sans-serif">
+
+    
+    <div class="jctx-host jctx-id-foo" style="width:300px; height:155px; border:2px solid #666666; padding:6px; color:#000000; ">
+        <p>Right-click in this justContext.js area
+        <br>is definetly cleaner and lighter
+        <br>use this with filetree to rename, delete, ??? selected.</p>
+        
+        <ul class="jctx jctx-id-foo jctx-white jctx-white-shadow">
+            <li data-action="cut">Cut</li>
+            <li data-action="copy">Copy</li>
+            <li data-action="paste">Paste</li>
+            <hr>
+            <li data-action="new_pkg">New package</li>
+          <li data-action="new_cls">New class</li>
+            <li data-action="new_intf" class="disabled">New interface (a disabled entry)</li>
+        </ul>
+    </div>
+    
+    right click out of the box to show the standard browser menu (if you're trying to view-source, right click here)
+  </body>
+</html>
