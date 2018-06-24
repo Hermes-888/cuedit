@@ -413,7 +413,14 @@ function updateMarkers(current) {
 
 // file managment:
 $('#filelist').hide();
-$('#workspace').hide();
+var local = window.location.href.split('/');
+//console.log('local', local);// check if online
+if (local[0] == 'file:') {
+    //manually set video and track filenames
+    injectVideo('airfield_inspections.mp4', 'airfield_inspections.vtt');
+} else {
+    $('#workspace').hide();
+}
 // open mp4 and vtt files
 $('#openfiles').on('click', function () {
     $('#loadinstruct').html('<b>Select a Video then a vtt file or New vtt File</b>');

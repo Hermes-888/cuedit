@@ -4,6 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Cue Edit</title>
   <link rel="stylesheet" href="js/cuedit.css" type="text/css" />
+  <link rel="stylesheet" href="js/justcontext.css" type="text/css" />
 </head>
 <body>
 <div class="container">
@@ -41,18 +42,27 @@
         </div>
 
         <!--column 2 scrollable-->
-        <div class="colmRight">
+        <div class="colmRight jctx-host jctx-id-panels">
             <div id="markers"></div>
+            <ul class="jctx jctx-id-panels jctx-white jctx-white-shadow">
+                <li data-action="cut">Cut</li>
+                <li data-action="copy">Copy</li>
+                <li data-action="paste">Paste</li>
+                <hr>
+                <li data-action="new_intf" class="disabled">TODO menu options<br>Instructions</li>
+            </ul>
         </div>
     </div>
 </div>
 
 <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 <script src="js/cuedit.js" type="text/javascript"></script>
+<script src="js/justcontext.js" type="text/javascript"></script>
 <script>
-    // move to cuedit.js
-    
-    
+    // justContext events
+    function handleMenuAction(evt) {
+        console.log("Action required: " + evt);
+    }
 </script>
 </body>
 </html>
