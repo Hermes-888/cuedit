@@ -27,6 +27,9 @@ onDOMReady(function(){
 		})
 	});
 	addListener(document,"mousedown",function(e){
-		if(!isNotBatman(e.target,".jctx-host")) Array.from(document.querySelectorAll(".jctx")).forEach((x,i)=>{fadeElement(x,'hide')})
+		if(!isNotBatman(e.target,".jctx-host")) {
+            //console.log('not batman');
+            Array.from(document.querySelectorAll(".jctx")).forEach((x,i)=>{fadeElement(x,'hide')})
+        }
 	})
 });

@@ -114,9 +114,10 @@ function handleTracks() {
         if (track.activeCues.length > 0) {
             console.log('cuechange:', track.activeCues[0]);
             currentPanel = track.activeCues[0].id;
-            $('#panel_'+lastPanel).removeClass('selected');
+            //$('#panel_'+lastPanel).removeClass('selected');
+            removeSelected();
             $('#panel_'+currentPanel).addClass('selected');
-            lastPanel = currentPanel;
+            //lastPanel = currentPanel;
         }
     }
 }
@@ -128,9 +129,10 @@ $('.minusbtn').on('click', function(e) {
         currentPanel--;// = currentPanel -1;//OK
         vidplayer.pause();
         vidplayer.currentTime = panels[currentPanel].startTime;
-        $('#panel_'+lastPanel).removeClass('selected');
+        //$('#panel_'+lastPanel).removeClass('selected');
+        removeSelected();
         $('#panel_'+currentPanel).addClass('selected');
-        lastPanel = currentPanel;
+        //lastPanel = currentPanel;
         //console.log('plus:', currentPanel);
     }
 });
@@ -140,9 +142,10 @@ $('.plusbtn').on('click', function(e) {
         currentPanel++;// = currentPanel + 1;// str why?
         vidplayer.pause();
         vidplayer.currentTime = panels[currentPanel].startTime;
-        $('#panel_'+lastPanel).removeClass('selected');
+        //$('#panel_'+lastPanel).removeClass('selected');
+        removeSelected();
         $('#panel_'+currentPanel).addClass('selected');
-        lastPanel = currentPanel;
+        //lastPanel = currentPanel;
         //console.log('plus:', currentPanel);
     }
 });
@@ -286,7 +289,7 @@ function addCuePanel(cue) {
         $('#panel_'+currentPanel).find('textarea').blur();
     }
     currentPanel += 1;
-    lastPanel = currentPanel;
+    //lastPanel = currentPanel;
     // add new panel template and modify it
     $('#markers').append(panelTpl);
     var pnl = $('#markers').find('#pnl');// unique id
@@ -295,7 +298,7 @@ function addCuePanel(cue) {
     $(pnl).on('click', function(e) {
         togglend = false;
         if (currentPanel > -1) {
-            $('#panel_'+currentPanel).removeClass('selected');// last panel
+            $('#panel_'+currentPanel).removeClass('selected');
         }
         currentPanel = getNum($(this));
         $(this).addClass('selected');
@@ -408,6 +411,13 @@ function updateMarkers(current) {
     console.log('panels:', panels.length, panels);
     if (track) {
         console.log('track.cues:', track.cues.length, track.cues);
+    }
+}
+
+function removeSelected() {
+    var count = $('.panel').length;
+    for(var i=0; i<count; i++) {
+        $('#panel_'+i).removeClass('selected');
     }
 }
 
