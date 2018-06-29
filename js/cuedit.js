@@ -59,7 +59,7 @@ var currentPanel = -1;
 var lastPanel = currentPanel;
 var togglend = false;
 var currentTime = 0.0;
-var adjustment = 0.1;
+var adjustment = 0.01;
 var videoname='';// filename.mp4
 var trackname='';// filename.vtt  
 var filename ='Untitled.vtt';
@@ -90,23 +90,25 @@ function handleTracks() {
         console.log('track:', track.cues.length, track.cues);
     }
     // create editor panels from track cues
+    panels = [];
     for(var i=0; i<track.cues.length; i++) {
-            if (track.cues[i].id == '') {
-                track.cues[i].id = i;// needed for cuechange
-            }
-            // copy cue to pobj & push
-            var cue = track.cues[i];
-            var pobj = {};
-                pobj.panel = i;
-                pobj.id = cue.id;
-                pobj.startTime = cue.startTime;
-                pobj.endTime = cue.endTime;
-                pobj.text = cue.text;
-            panels.push(pobj);
-            // build dom view from panels
-            addCuePanel(pobj);//might be able to use vtt instead of panels?
+        if (track.cues[i].id == '') {
+            track.cues[i].id = i;// needed for cuechange
         }
-        console.log('panels:', currentPanel, panels);
+        // copy cue to pobj & push
+        var cue = track.cues[i];
+        var pobj = {};
+            pobj.panel = i;
+            pobj.id = cue.id;
+            pobj.startTime = cue.startTime;
+            pobj.endTime = cue.endTime;
+            pobj.text = cue.text;
+        panels.push(pobj);
+        // build dom view from panels
+        addCuePanel(pobj);//might be able to use vtt instead of panels?
+    }
+    console.log('panels:', panels.length, panels);
+    vidplayer.currentTime = 0;
     
     track.addEventListener("cuechange", seeActiveCue);
     function seeActiveCue(e) {
@@ -114,38 +116,38 @@ function handleTracks() {
         if (track.activeCues.length > 0) {
             console.log('cuechange:', track.activeCues[0]);
             currentPanel = track.activeCues[0].id;
-            //$('#panel_'+lastPanel).removeClass('selected');
-            removeSelected();
+            $('#panel_'+lastPanel).removeClass('selected');
+            //removeSelected();
             $('#panel_'+currentPanel).addClass('selected');
-            //lastPanel = currentPanel;
+            lastPanel = currentPanel;
         }
     }
 }
 
-// - & + buttons move through cues
+// < & > buttons move through cues
 $('.minusbtn').on('click', function(e) {
     // previous cue panel
     if (currentPanel > 0) {
-        currentPanel--;// = currentPanel -1;//OK
+        currentPanel--;
         vidplayer.pause();
         vidplayer.currentTime = panels[currentPanel].startTime;
-        //$('#panel_'+lastPanel).removeClass('selected');
-        removeSelected();
+        $('#panel_'+lastPanel).removeClass('selected');
+        //removeSelected();
         $('#panel_'+currentPanel).addClass('selected');
-        //lastPanel = currentPanel;
+        lastPanel = currentPanel;
         //console.log('plus:', currentPanel);
     }
 });
 $('.plusbtn').on('click', function(e) {
     // next cue panel
     if (currentPanel > -1 && currentPanel < (panels.length)-1) {
-        currentPanel++;// = currentPanel + 1;// str why?
+        currentPanel++;
         vidplayer.pause();
         vidplayer.currentTime = panels[currentPanel].startTime;
-        //$('#panel_'+lastPanel).removeClass('selected');
-        removeSelected();
+        $('#panel_'+lastPanel).removeClass('selected');
+        //removeSelected();
         $('#panel_'+currentPanel).addClass('selected');
-        //lastPanel = currentPanel;
+        lastPanel = currentPanel;
         //console.log('plus:', currentPanel);
     }
 });
@@ -289,7 +291,7 @@ function addCuePanel(cue) {
         $('#panel_'+currentPanel).find('textarea').blur();
     }
     currentPanel += 1;
-    //lastPanel = currentPanel;
+    lastPanel = currentPanel;
     // add new panel template and modify it
     $('#markers').append(panelTpl);
     var pnl = $('#markers').find('#pnl');// unique id
